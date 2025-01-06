@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="race_assets/css/nav_race.css">
+    <script src="race_assets/js/display_footer.js" defer></script>
+    <script src="race_assets/js/race_js.js" defer></script>
+    <title>E-Kart Race</title>
+</head>
+<body>
+    <header>
+        <section class="classment">
+            <classmentHeader>
+                <div class="logo" id="logo">
+                    <img src="race_assets/img/logo.png" alt="E-Kart">
+                </div>
+                <div class="race_step" id="raceStep">
+                    <h1 id="big_title" class="big_title">Q3</h1>
+                </div>
+            </classmentHeader>
+            <section class="race_info" id="race_info">
+                <section class="timing" id="timing">
+                    <span class="chrono" id="chrono">06:43</span>
+                </section>
+                <section class="divider" id="divider"></section>
+                <section class="lap" id="lap">
+                    <span class="lapcount" id="lapcount">56/70</span>
+                </section>
+            </section>
+            <section class="podium" id="podium">
+                <table>
+                    <tr>
+                      <td class="position" id="position">1</td>
+                      <td class="Smallname" id="Smallname">LEC</td>
+                      <td class="lapTime" id="lapTime">+1.363</td>
+                      <td class="trap"><img src="race_assets/event_icones/etoile.png"></td>
+                    </tr>
+                    <tr>
+                      <td class="position" id="position">2</td>
+                      <td class="Smallname" id="Smallname">PIA</td>
+                      <td class="lapTime" id="lapTime">+1.363</td>
+                      <td class="trap">
+                        <img src="race_assets/event_icones/Bullet_Bill.webp">
+                    </td>
+                    </tr>
+                  </table>
+            </section>
+        </section>
+        <section class="ephemeralInfo" id="ephemeralInfo">
+            <div class="left" id="left">
+                <span id="player">{Player}</span>
+            </div>
+            <div class="center" id="center">
+                <span id="infoCourse">{info course ou player}</span>
+            </div>
+            <div class="right" id="right">
+                <span id="infoPlus">{Info complémentaire}</span>
+            </div>
+        </section>
+        <nav class="nav navbar">
+            <ul>
+                <li class="nav_link">
+                    <a href="../index.html">Retour</a>
+                </li>
+                <li class="nav_link">
+                    <a onclick="toggleBackgroundImage()" id="nav_link_direct">
+                        <div class="red_point"></div>
+                        Direct
+                    </a>
+                </li>
+                <li class="nav_link">
+                    <a onclick="displayHideCarsInfos()" id="nav_link_footer">
+                        Informations
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <footer id="footer_cards" style="display: none;">
+        <div class="player1_card card" id="player1_card">
+            <section class="cardHeader" id="cardHeader1">
+                <div class="right" id="cardHeader1Right">
+                    <span class="whiteTitle" id="cardHeader1WhiteTitle">CHARLES</span>
+                    <span class="coloredTitle" id="cardHeader1ColoredTitle">LECLERC</span>
+                    <span class="team" id="cardHeader1Team">FERRARI</span>
+                </div>
+                <div class="left" id="cardHeader1Left">
+                    <img src="race_assets/img/user1.png" alt="Player 1" id="cardHeader1LeftIMG">
+                </div>
+            </section>
+            <section class="cardBody" id="cardBody1">
+                <div class="info" id="cardBody1Info">
+                    <table>
+                        <tr>
+                            <td class="label fastestlap" id="cardBody1InfoFastestLap">Fastest lap :</td>
+                            <td class="value fastestlapValue" id="cardBody1InfoFastestLapValue">1:45:337</td>
+                        </tr>
+                        <tr>
+                            <td class="label currentLap" id="cardBody1InfoCurrentLap">Current lap time :</td>
+                            <td class="value currentLapValue" id="cardBody1InfoCurrentLapValue">1:45:337</td>
+                        </tr>
+                        <tr>
+                            <td class="label trapStatus" id="cardBody1InfoTrapStatus">Trap in inventory :</td>
+                            <td class="value trapStatusValue" id="cardBody1InfoTrapStatusValue">Non</td>
+                        </tr>
+                        <tr>
+                            <td class="label energie" id="cardBody1InfoEnergie">Energie :</td>
+                            <td class="value energieValue" id="cardBody1InfoTEnergieValue">19W</td>
+                        </tr>
+                        <tr>
+                            <td class="label speed" id="cardBody1InfoSpeed">Vitesse :</td>
+                            <td class="value speedValue" id="cardBody1InfoSpeedValue">16Km/h</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <div class="player2_card card" id="player2_card">
+            <section class="cardHeader" id="cardHeader2">
+                <div class="right" id="cardHeader2Right">
+                    <span class="whiteTitle" id="cardHeader2WhiteTitle">OSCAR</span>
+                    <span class="coloredTitle" id="cardHeader2ColoredTitle">PIASTRI</span>
+                    <span class="team" id="cardHeader2Team">MCLAREN</span>
+                </div>
+                <div class="left" id="cardHeader2Left">
+                    <img src="race_assets/img/user2.png" alt="Player 2" id="cardHeader2LeftIMG">
+                </div>
+            </section>
+            <section class="cardBody" id="cardBody2">
+                <div class="info" id="cardBody2Info">
+                    <table>
+                        <tr>
+                            <td class="label fastestlap" id="cardBody2InfoFastestLap">Fastest lap :</td>
+                            <td class="value fastestlapValue" id="cardBody2InfoFastestLapValue">2:45:337</td>
+                        </tr>
+                        <tr>
+                            <td class="label currentLap" id="cardBody2InfoCurrentLap">Current lap time :</td>
+                            <td class="value currentLapValue" id="cardBody2InfoCurrentLapValue">3:45:337</td>
+                        </tr>
+                        <tr>
+                            <td class="label trapStatus" id="cardBody2InfoTrapStatus">Trap in inventory :</td>
+                            <td class="value trapStatusValue" id="cardBody2InfoTrapStatusValue">Oui</td>
+                        </tr>
+                        <tr>
+                            <td class="label energie" id="cardBody2InfoEnergie">Energie :</td>
+                            <td class="value energieValue" id="cardBody2InfoTEnergieValue">19W</td>
+                        </tr>
+                        <tr>
+                            <td class="label speed" id="cardBody2InfoSpeed">Vitesse :</td>
+                            <td class="value speedValue" id="cardBody2InfoSpeedValue">6Km/h</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </footer>
+</html>

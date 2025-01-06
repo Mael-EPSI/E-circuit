@@ -1,0 +1,434 @@
+@font-face {
+    font-family: "Formula1-bold"; /* Nom de la police que vous souhaitez utiliser */
+    src: url("../../../assets/font/Formula1-Bold-4.ttf") format("truetype"); /* Chemin vers votre fichier .ttf */
+    /* Autres propriétés facultatives comme font-weight, font-style peuvent être définies ici */
+  }
+  
+  * {
+    font-family: "Formula1-bold", sans-serif; /* Utilisez la police définie comme première option, puis une police sans-serif de secours */
+  }
+  
+
+body {
+    margin: 0;
+    background-image: url(../../../assets/img/test.png);
+    backdrop-filter: blur(5px);
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+header {
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100% - 60px);
+}
+header .classment {
+    display: flex;
+    flex-direction: column;
+    background-color: #1D1D1D;
+    color: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /* width: 220px; */
+}
+
+header .classment classmentHeader {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+}
+header .classment classmentHeader .logo {
+    width: 100px;
+}
+.logo img {
+    width: 100%;
+    border-top-left-radius: 20px;
+}
+header .classment .race_info {
+    padding: 5px 20px 5px 20px;
+    height: 3vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    letter-spacing: 2px;
+    border-top: 1px solid rgba(255, 255, 255, 0.20);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+}
+.race_info .timing {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.race_info .divider {
+    width: 2px;
+    background-color: rgba(255, 255, 255, .20);
+}
+.race_info .lap {
+    display: flex;
+    align-items: center;
+}
+
+header .classment .podium {
+    /* padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px; */
+    display: flex;
+}
+.podium .table {
+    display: flex;
+    table-layout: fixed;
+    margin: 10px 20px;
+}
+.podium .table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.podium .table td {
+    /* width: 80px; */
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+}
+.podium td.trap {
+    margin-left: 5px;
+}
+.podium td.trap img {
+    max-width: 30px;
+    height: auto;
+}
+.table tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid blue; */
+    /* width: 9vw; */
+    width: 100%;
+    /* gap: 5px; */
+    height: 30px;
+}
+header .ephemeralInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1D1D1D;
+    height: fit-content;
+    color: white;
+    border-radius: 8px;
+    padding: 14px;
+    gap: 27px;
+}
+header .ephemeralInfo .left {
+    font-size: 20px;
+}
+header .ephemeralInfo .center {
+    font-size: 20px;
+}
+header .ephemeralInfo .right {
+    font-size: 20px;
+}
+
+.nav {
+    background-color: #1D1D1D;
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    padding: 10px;
+    border-radius: 8px;
+}
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    color: black;
+    list-style: none;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+}
+.nav ul li {
+    background-color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.nav ul li a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+.nav ul li .red_point {
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: #D43838;
+}
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 61vh;
+    /* animation: displayItem .5s ease-out forwards; */
+}
+@keyframes displayItem {
+    from {
+        transform: translateY(50%);
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+        transform: translateY(-10%);
+    }
+}
+
+@keyframes hideItem {
+    from {
+        opacity: 1;
+        scale: 1;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 0;
+        scale: 1;
+        transform: translateY(50%);
+    }
+}
+.barcontainer{
+    border: 1px solid white;
+    position: relative;
+    margin-left: 50px;
+    width: 25px;
+    height: 320px;
+}
+    
+.bar{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    transform-origin: bottom;
+}
+.bar::after {
+    content: attr(data-percentage) "%"; 
+    position: absolute;
+    bottom: 50%; 
+    left: 50%;
+    transform: translate(-50%, 50%); 
+    font-size: 14px; 
+    color: black;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5px;
+    border-radius: 3px;
+}
+.barcontainer::before {
+    color: white;
+    content: "100%";
+    position: absolute;
+    top: -20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px; 
+}
+
+.barcontainer::after {
+    color: white;
+    content: "0%";
+    position: absolute;
+    bottom: -20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px; 
+}
+
+.info_tel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 48vh;
+    border-radius: 8px;
+    padding: 14px 0px 14px 14px;
+    background-color: #1D1D1D;
+}
+.info_tel .table_info_tel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    width: 100%;
+    height: 100%;
+}
+.info_tel .table_info_tel tbody {
+    width: 5vw;
+    /* height: 20vh; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .card {
+    background-color: #1D1D1D;
+    color: white;
+    padding: 14px;
+    width: max-content;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+footer .card .cardHeader {
+    display: flex;
+    justify-content: center;
+    gap: 27px;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+footer .card .cardHeader .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+footer .card .cardHeader .left {
+    width: 50%;
+}
+footer .card .cardHeader .left img {
+    width: 100px;
+    border-radius: 100px;
+}
+
+footer  .card .cardBody {
+    width: 100%;
+    height: 70%;
+}
+footer .card .cardBody .info {
+    height: 100%;
+    width: 100%;
+}
+.info table {
+    width: 100%;
+}
+
+.info td {
+    padding: 5px;
+}
+td.trapStatusValue img {
+    max-width: 80px;
+    height: auto;
+}
+.info .label {
+    text-align: left;
+}
+
+.info .value {
+    text-align: right;
+}
+
+.info tr {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 5vh;
+}
+
+
+
+
+.Btn {
+    --black: #000000;
+    --ch-black: #141414;
+    --eer-black: #1b1b1b;
+    --night-rider: #2e2e2e;
+    --white: #ffffff;
+    --af-white: #f3f3f3;
+    --ch-white: #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: var(--af-white);
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: var(--night-rider);
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: var(--night-rider);
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    width: 124px;
+    border-radius: 5px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    /* padding-left: 20px; */
+  }
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }

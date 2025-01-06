@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet E-Kart - STI2D</title>
+    <style>
+        @font-face {
+            font-family: "Formula1"; /* Nom de la police que vous souhaitez utiliser */
+            src: url("../assets/font/Formula1-Regular-1.ttf") format("truetype"); /* Chemin vers votre fichier .ttf */
+        }
+        :root {
+            --primary-color: #1D1D1D;
+            --secondary-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Formula1", sans-serif; /* Utilisez la police définie comme première option, puis une police sans-serif de secours */
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            padding: .5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar img {
+            width: 10%;
+            border-radius: 50%;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            margin-right: 1rem;
+        }
+
+        .navbar li {
+            margin-left: .5rem;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background: url('../assets/img/test.png') no-repeat center center/cover;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+
+        .card h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .project-item {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .project-item i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .project-details {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="left">
+            <img src="../assets/img/logo.png" alt="Logo E-Kart">
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="../index.html">Retour</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Projet E-Kart</h1>
+            <p>Innovation et technologie au service du divertissement</p>
+        </div>
+    </section>
+
+    <div class="card">
+        <h2>À propos du projet</h2>
+        <p>Le projet E-Kart a été réalisé dans le cadre des projets 72h de la filière STI2D pour le BAC. Ce projet ambitieux a été divisé en trois sous-projets distincts, chacun géré par une équipe de 4 à 5 élèves.</p>
+        
+        <div class="project-details">
+            <div class="project-item">
+                <i class="fas fa-archway"></i>
+                <h3>L'Arche</h3>
+                <p>Centre de contrôle et de communication</p>
+            </div>
+            <div class="project-item">
+                <i class="fas fa-car"></i>
+                <h3>Les Voitures</h3>
+                <p>Véhicules autonomes et interactifs</p>
+            </div>
+            <div class="project-item">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Les Pièges</h3>
+                <p>Éléments dynamiques pour pimenter la course</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Projet E-Kart - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/system_style.css">
+  <link rel="stylesheet" href="assets/css/firstpage.css">
+  <!-- CSS -->
+
+
+  <!-- JS -->
+  <script src="assets/js/system_js.js"></script>
+  <script src="assets/js/firstpage.js" defer></script>
+  <!-- JS -->
+
+
+  <!-- FONT -->
+  <!-- FONT -->
+
+
+  <!-- API -->
+  <!-- API -->
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"></script> -->
+  <title>Projet 72h</title>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const message = document.createElement('div');
+      message.style.position = 'fixed';
+      message.style.top = '10px';
+      message.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+      message.style.color = 'white';
+      message.style.padding = '1rem';
+      message.style.borderRadius = '5px';
+      message.style.zIndex = '1000';
+      message.style.left = '50%';
+      message.style.transform = 'translateX(-50%)';
+      message.style.maxWidth = '50%';
+      message.style.textAlign = 'center';
+
+      const messageText = document.createElement('p');
+      messageText.textContent = 'Pour des raisons de sécurité, ce projet ne contient pas de PHP.';
+      messageText.style.margin = '1rem';
+      message.appendChild(messageText);
+
+      
+      const messageText2 = document.createElement('p');
+      messageText2.textContent = 'Pour vous déplacer vous avez un bouton en bas de la page ou alors avez les flèches de votre clavier.';
+      messageText2.style.margin = '1rem';
+      message.appendChild(messageText2);
+
+      const closeButton = document.createElement('span');
+      closeButton.textContent = '×';
+      closeButton.style.position = 'absolute';
+      closeButton.style.top = '5px';
+      closeButton.style.right = '10px';
+      closeButton.style.cursor = 'pointer';
+      closeButton.style.fontSize = '20px';
+      closeButton.style.color = 'white';
+
+      closeButton.addEventListener('click', function() {
+        document.body.removeChild(message);
+      });
+
+      message.appendChild(closeButton);
+
+      document.body.appendChild(message);
+
+      document.addEventListener('click', function(event) {
+        if (!message.contains(event.target)) {
+          document.body.removeChild(message);
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <main>
+    <ul class='slider'>
+      <li class='item' style="background-image: url('assets/slider/img4.jpg')">
+        <div class='content'>
+          <h2 class='title'>Enregistrer sa voiture</h2>
+          <p class='description'>Tu veux personaliser le nom de ta voiture ?</p>
+          <!-- <button onclick="window.location.href = 'php/Auth/cars/register.php';">C'est ici !!!</button> -->
+        </div>
+        <div class="content2">
+          <p class="description">
+            Pour des raisons de sécurité cette fonctionalité est indisponilbe
+          </p>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('assets/slider/img1.jpg')">
+        <div class='content'>
+          <h2 class='title'>La course</h2>
+          <p class='description'>Ici, vous pouvez accéder à la retransmission des courses et obtenir des informations sur les voitures.</p>
+          <button onclick="window.location.href = 'course/index_image.php';">Accéder au flux en direct</button>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('assets/slider/img2.png')">
+        <div class='content'>
+          <h2 class='title'>Quel est ce projet ?</h2>
+          <p class='description'>Nous sommes 14 étudiants en STI2D. Nous devons créer un modèle de voiture électrique de course, basé sur le concept de "Mario Kart®" ?</p>
+          <button onclick="window.location.href = 'presentation/index.html';">Partir à la découverte</button>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('assets/img/test.png')">
+        <div class='content'>
+          <h2 class='title'>Directeur de course</h2>
+          <p class='description'>Vérification, et supervision de la course</p>
+          <button onclick="window.location.href='php/admin/index.html';">Administrer</button>
+        </div>
+      </li>
+    </ul>
+    <nav class='nav'>
+      <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+    </nav>
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- partial -->
+</body>
+
+</html>

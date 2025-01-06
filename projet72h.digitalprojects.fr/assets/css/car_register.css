@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "Formula1"; /* Nom de la police que vous souhaitez utiliser */
+    src: url("../font/Formula1-Bold_web.ttf") format("truetype"); /* Chemin vers votre fichier .ttf */
+    /* Autres propriétés facultatives comme font-weight, font-style peuvent être définies ici */
+  }
+  @font-face {
+    font-family: "Formula1_bold4"; /* Nom de la police que vous souhaitez utiliser */
+    src: url("../font/Formula1-Bold-4.ttf") format("truetype"); /* Chemin vers votre fichier .ttf */
+    /* Autres propriétés facultatives comme font-weight, font-style peuvent être définies ici */
+  }
+  
+  * {
+    font-family: "Formula1", sans-serif; /* Utilisez la police définie comme première option, puis une police sans-serif de secours */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+body {
+    background-color: #1D1D1D;
+    margin: 0;
+}
+.container {
+    display: flex;
+    align-items: center;
+}
+.container .left, .container .right {
+    min-height: 100vh;
+    max-height: 100vh;
+}
+.container .left {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid white; */
+    width: 36%;
+    background-image: url(../img/BG_conn.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+}
+.container .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    width: 64%;
+}
+.container .right form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    gap: 13px;
+    padding: 20px;
+}
+form .row {
+    display: flex;
+    flex-direction: column;
+}
+.right form input {
+    width: 269px;
+    height: 43px;
+    padding: 0px 15px;
+    background: #FFFFFF;
+    border: 2px solid #D0D5DD;
+    border-radius: 8px;
+}
+form button {
+    font-family: 'Formula1_bold4';
+    background-color: #1D1D1D;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 35px;
+    font-size: 20px;
+    letter-spacing: 1%;
+}
+.notification {
+    color: red;
+}

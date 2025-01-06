@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "Formula1-bold"; /* Nom de la police que vous souhaitez utiliser */
+    src: url("../../../assets/font/Formula1-Bold-4.ttf") format("truetype"); /* Chemin vers votre fichier .ttf */
+    /* Autres propriétés facultatives comme font-weight, font-style peuvent être définies ici */
+  }
+  
+  * {
+    font-family: "Formula1-bold", sans-serif; /* Utilisez la police définie comme première option, puis une police sans-serif de secours */
+  }
+  
+
+body {
+    margin: 0;
+    background-color: #1D1D1D;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.nav .left img {
+    width: 15%;
+}
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    color: black;
+    list-style: none;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+}
+.nav ul li {
+    background-color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.nav ul li a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+.nav ul li .red_point {
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: #D43838;
+}
